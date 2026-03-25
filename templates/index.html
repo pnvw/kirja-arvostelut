@@ -2,18 +2,23 @@
 <html>
 
 <head>
-    <title>Otsikko</title>
-    <img src="/static/kuva.png" />
+  <title>Kirja-arvostelut</title>
 </head>
 
 <body>
-    <h1>Kirja-arvostelut ja kommentit</h1>
-    <p>{{ message }}</p>
-    <ul>
-        {% for item in items %}
-        <li>{{ item }}</li>
-        {% endfor %}
-    </ul>
+    <h1>Kirja-arvostelut</h1>
+
+  {% if session.username %}
+  <p>
+    Olet kirjautunut nimellä {{ session.username }}
+  </p>
+  {% endif %}
+
+  <p>
+    <a href="/login">Kirjaudu sisään</a>
+    <a href="/register">Luo tunnus</a>
+    <a href="/logout">Kirjaudu ulos</a>
+  </p>
 </body>
 
 </html>
