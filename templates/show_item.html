@@ -7,16 +7,23 @@
 
 <body>
   <h1>{{ item.book_name }} – {{ item.writer }}</h1>
+  {% if session.user_id == item.user_id %}
+  <p>
+    <a href="/edit_item/{{ item.id }}">Muokkaa</a>
+  </p>
+  {% endif %}
   <p>
     Kirjan laji: {{ item.book_type }}
   </p>
   <p>
-    Arvostelu: {{ item.review }}
+    {{ item.review }}
   </p>
   <p>
     Arvostelija: {{ item.username }}
   </p>
   <p>
+    Arvosana (1 = huono, 5 = erinomainen): {{ item.grade }}
+  </p>
     <a href="/">Takaisin</a>
   </p>
 </body>

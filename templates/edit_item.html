@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Arvostelun muokkaus</title>
+</head>
+
+<body>
+  <h1>Arvostelun muokkaus</h1>
+  <form action="/update_item" method="post">
+    <p>
+      Kirjan laji: <br />
+      <input type="text" name="book_type" value="{{ item.book_type }}"/>
+    </p>
+    <p>
+      Kirjan nimi: <br />
+      <input type="text" name="book_name" value="{{ item.book_name }}"/>
+    </p>
+    <p>
+      Kirjailija: <br />
+      <input type="text" name="writer" value="{{ item.writer }}" />
+    </p>
+    <p>
+      Arvostelu: <br />
+      <textarea name="review" rows="20" cols="80">{{ item.review }}</textarea>
+      </p>
+    <p>
+      Arvosana (1-5): <br />
+      <input type="text" name="grade" size="4" value="{{ item.grade }}"/>
+      </p>
+      <input type="hidden" name="item_id" value="{{ item.id }}" /> 
+      <input type="submit" value="Päivitä arvostelu" />
+  </form>
+</body>
+
+</html>
