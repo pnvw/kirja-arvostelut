@@ -9,7 +9,7 @@
 - Käyttäjä pystyy valitsemaan arvostelulle yhden tai useamman luokittelun (esim. kirjan lajityyppi ja arvosana).
 - Käyttäjä pystyy kirjoittamaan arvosteluja kirjoista.
 
-Kirja-arvostelu sovelluksessa käyttäjät voivat lisätä ja lukea muiden tekemiä kirja-arvosteluja tietyistä kirjoista. Sovelluksessa käyttäjillä on omat profiilit, ja arvosteluja voi luokitella kirjan lajityypin ja arvostanan mukaan.
+Kirja-arvostelusovelluksessa käyttäjät voivat lisätä ja lukea muiden tekemiä kirja-arvosteluja tietyistä kirjoista. Sovelluksessa käyttäjillä on omat profiilit, ja arvosteluja voi luokitella kirjan lajityypin ja arvosanan mukaan.
 
 # Sovelluksen testaaminen
 
