@@ -10,23 +10,23 @@
   <form action="/create_item" method="post">
     <p>
       Kirjan laji: <br />
-      <input type="text" name="book_type" />
+      <input type="text" name="book_type" maxlength="50" />
     </p>
     <p>
       Kirjan nimi: <br />
-      <input type="text" name="book_name" />
+      <input type="text" name="book_name" maxlength="50" />
     </p>
     <p>
       Kirjailija: <br />
-      <input type="text" name="writer" />
+      <input type="text" name="writer" maxlength="50" />
     </p>
     <p>
       Arvostelu: <br />
-      <textarea name="review" rows="20" cols="80"></textarea>
+      <textarea name="review" rows="20" cols="80" maxlength="5000" required ></textarea>
       </p>
     <p>
       Arvosana (1-5): <br />
-      <input type="text" name="grade" size="4" />
+      <input type="text" name="grade" size="4" pattern="[1-5]{1,5}"/>
       </p>  
     <input type="submit" value="Luo kirja-arvostelu" />
   </form>
