@@ -10,19 +10,19 @@
   <form action="/update_item" method="post">
     <p>
       Kirjan laji: <br />
-      <input type="text" name="book_type" value="{{ item.book_type }}"/>
+      <input type="text" name="book_type" value="{{ item.book_type }}" maxlength="50" required/>
     </p>
     <p>
       Kirjan nimi: <br />
-      <input type="text" name="book_name" value="{{ item.book_name }}"/>
+      <input type="text" name="book_name" value="{{ item.book_name }}" maxlength="50" required/>
     </p>
     <p>
       Kirjailija: <br />
-      <input type="text" name="writer" value="{{ item.writer }}" />
+      <input type="text" name="writer" value="{{ item.writer }}" maxlength="50" required/>
     </p>
     <p>
       Arvostelu: <br />
-      <textarea name="review" rows="20" cols="80">{{ item.review }}</textarea>
+      <textarea name="review" rows="20" cols="80" maxlength="5000" required >{{ item.reviw }}</textarea>
       </p>
     <p>
       Arvosana (1-5): <br />

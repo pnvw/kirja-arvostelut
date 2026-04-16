@@ -78,6 +78,7 @@ def edit_item(item_id):
 
 @app.route("/update_item", methods=["POST"])
 def update_item():
+    require_login()
     item_id = request.form["item_id"]
     item = items.get_item(item_id)
     if not item:
@@ -85,9 +86,17 @@ def update_item():
     if item["user_id"] != session["user_id"]:
         abort(403)
     book_type = request.form["book_type"]
+    if not book_type or len(book_type) > 50:
+        abort(403)
     book_name = request.form["book_name"]
+    if not book_name or len(book_name) > 50:
+        abort(403)
     writer = request.form["writer"]
+    if not writer or len(writer) > 50:
+        abort(403)
     review = request.form["review"]
+    if not review or len(review) > 5000:
+        abort(403)
     grade = request.form["grade"]
 
     items.update_item(item_id, book_type, book_name, writer, review, grade)
