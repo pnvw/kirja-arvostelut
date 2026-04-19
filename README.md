@@ -6,10 +6,9 @@
 - Käyttäjä pystyy etsimään arvosteluja hakusanalla.
 - Käyttäjä pystyy hakemaan sekä itse lisäämiään että muiden käyttäjien lisäämiä arvosteluja.
 - Sovelluksessa on käyttäjäsivut, jotka näyttävät jokaisesta käyttäjästä tilastoja ja käyttäjän lisäämät arvostelut.
-- Käyttäjä pystyy valitsemaan arvostelulle yhden tai useamman luokittelun (esim. kirjan lajityyppi ja arvosana).
-- Käyttäjä pystyy kirjoittamaan arvosteluja kirjoista.
+- Käyttäjä pystyy luokitella arvostelun kirjan genren ja kohderyhmän mukaan.
 
-Kirja-arvostelusovelluksessa käyttäjät voivat lisätä ja lukea muiden tekemiä kirja-arvosteluja tietyistä kirjoista. Sovelluksessa käyttäjillä on omat profiilit, ja arvosteluja voi luokitella kirjan lajityypin ja arvosanan mukaan.
+Kirja-arvostelusovelluksessa käyttäjät voivat lisätä, lukea ja kommentoida muiden tekemiä kirja-arvosteluja tietyistä kirjoista. Sovelluksessa käyttäjillä on omat profiilit, ja arvosteluja voi luokitella kirjan genren ja kohderyhmän mukaan.
 
 # Sovelluksen asennus
 
