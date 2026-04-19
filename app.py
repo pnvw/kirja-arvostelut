@@ -101,7 +101,7 @@ def create_comment():
 
     items.add_comment(item_id, user_id, comment)
 
-    return redirect("/item/" +str(item_id))
+    return redirect("/item/" + str(item_id))
 
 @app.route("/edit_item/<int:item_id>")
 def edit_item(item_id):

@@ -35,7 +35,7 @@
   <h2>Kommentit</h2>
   <ul>
     {% for comment in comments %}
-    <li>{{ comment.comment }}, <a href="/user/{{comment.user_id }}">{{comment.username }}</a></li>
+    <li>{{ comment.comment }}, <a href="/user/{{ comment.user_id }}">{{comment.username }}</a></li>
     {% endfor %}
   </ul>
   <h2>Uusi kommentti</h2>

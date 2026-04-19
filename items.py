@@ -30,7 +30,7 @@ def add_comment(item_id, user_id, comment):
     db.execute(sql, [item_id, user_id, comment])
 
 def get_comments(item_id):
-    sql = """SELECT comments.comment, users.id, users.username
+    sql = """SELECT comments.comment, users.id user_id, users.username
             FROM comments, users
             WHERE comments.item_id = ? AND comments.user_id = users.id
             ORDER BY comments.id DESC"""
@@ -74,10 +74,8 @@ def update_item(item_id, book_name, writer, review, rating, classes):
         db.execute(sql, [item_id, title, value])
 
 def remove_item(item_id):
-    sql = "DELETE FROM item_classes WHERE item_id = ?"
-    db.execute(sql, [item_id])
-    sql = "DELETE FROM items WHERE id = ?"
-    db.execute(sql, [item_id])
+    db.execute("DELETE FROM comments WHERE item_id = ?", [item_id])
+    db.execute("DELETE FROM items WHERE id = ?", [item_id])
 
 def find_items(query):
     sql = """SELECT id, book_name, writer
