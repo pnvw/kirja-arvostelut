@@ -1,3 +1,4 @@
+import secrets
 import sqlite3
 from flask import Flask
 from flask import abort, redirect, render_template, request, session
@@ -12,6 +13,10 @@ app.secret_key = config.secret_key
 
 def require_login():
     if "user_id" not in session:
+        abort(403)
+
+def check_csrf():
+    if request.form["csrf_token"] != session["csrf_token"]:
         abort(403)
 
 @app.route("/")
@@ -54,6 +59,7 @@ def new_item():
 
 @app.route("/create_item", methods=["POST"])
 def create_item():
+    check_csrf()
     require_login()
 
     book_name = request.form["book_name"]
@@ -88,6 +94,7 @@ def create_item():
 
 @app.route("/create_comment", methods=["POST"])
 def create_comment():
+    check_csrf()
     require_login()
 
     comment = request.form["comment"]
@@ -123,6 +130,7 @@ def edit_item(item_id):
 
 @app.route("/update_item", methods=["POST"])
 def update_item():
+    check_csrf()
     require_login()
     item_id = request.form["item_id"]
     item = items.get_item(item_id)
@@ -171,6 +179,7 @@ def remove_item(item_id):
         return render_template("remove_item.html", item=item)
 
     if request.method == "POST":
+        check_csrf()
         if "remove" in request.form:
             items.remove_item(item_id)
             return redirect("/")
@@ -209,6 +218,7 @@ def login():
         if user_id:
             session["user_id"] = user_id
             session["username"] = username
+            session["csfr_token"] = secrets.token_hex(16)
             return redirect("/")
         else:
             return "VIRHE: väärä tunnus tai salasana"
