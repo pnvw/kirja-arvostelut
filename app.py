@@ -1,12 +1,10 @@
-import secrets
 import sqlite3
 from flask import Flask
 from flask import abort, redirect, render_template, request, session
-import config
-import db
+import config, users
 import items
 import re
-import users
+import secrets
 
 app = Flask(__name__)
 app.secret_key = config.secret_key
@@ -203,7 +201,7 @@ def create():
     except sqlite3.IntegrityError:
         return "VIRHE: tunnus on jo varattu"
 
-    return "Tunnus luotu"
+    return render_template("register_success.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
