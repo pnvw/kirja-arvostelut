@@ -75,6 +75,7 @@ def update_item(item_id, book_name, writer, review, rating, classes):
 
 def remove_item(item_id):
     db.execute("DELETE FROM comments WHERE item_id = ?", [item_id])
+    db.execute("DELETE FROM item_classes WHERE item_id = ?", [item_id])
     db.execute("DELETE FROM items WHERE id = ?", [item_id])
 
 def find_items(query):

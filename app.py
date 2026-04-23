@@ -96,7 +96,7 @@ def create_comment():
     require_login()
 
     comment = request.form["comment"]
-    if not comment or len(comment) > 5000:
+    if not comment or len(comment) > 3000:
         abort(403)
     item_id = request.form["item_id"]
     item = items.get_item(item_id)
@@ -216,7 +216,7 @@ def login():
         if user_id:
             session["user_id"] = user_id
             session["username"] = username
-            session["csfr_token"] = secrets.token_hex(16)
+            session["csrf_token"] = secrets.token_hex(16)
             return redirect("/")
         else:
             return "VIRHE: väärä tunnus tai salasana"
