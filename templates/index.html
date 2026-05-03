@@ -8,28 +8,21 @@
 <body>
     <h1>Kirja-arvostelut</h1>
 
-  {% if session.username %}
+    {% if session.username %}
+    <p>
+      Olet kirjautunut nimellä {{ session.username }}
+    </p>
+    {% endif %}
+
   <p>
-    Olet kirjautunut nimellä {{ session.username }}, id-numerosi on {{ session.user_id }}
-  </p>
-  <p>
+    <a href="/find_item">Etsi kirja-arvostelu</a> |
+  {% if session.user_id %}
+    <a href="/new_item">Uusi kirja-arvostelu</a> |
     <a href="/logout">Kirjaudu ulos</a>
-  </p>
-
-  <p>
-    <a href="/new_item">Uusi kirja-arvostelu</a>
-  </p>
-
   {% else %}
-   <p>
-    <a href="/login">Kirjaudu sisään</a>
+    <a href="/login">Kirjaudu sisään</a> |
     <a href="/register">Luo tunnus</a>
-   </p>
-
   {% endif %}
-
-  <p>
-    <a href="/find_item">Etsi kirja-arvostelu</a>
   </p>
 
   <h2>Viimeisimmät arvostelut</h2>
