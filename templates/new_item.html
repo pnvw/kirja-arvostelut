@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 
-{% block title %}Uusi kirja-arvostelu{% endblock %}
+{% block title %}Uusi karvostelu{% endblock %}
 
 {% block content %}
 
-<h2>Uusi kirja-arvostelu</h2>
+<h2>Uusi arvostelu</h2>
 <form action="/create_item" method="post">
   <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}" />
   <p>
@@ -34,6 +34,6 @@
     </select>
   </p>
   {% endfor %}
-  <input type="submit" value="Luo kirja-arvostelu" />
+  <input type="submit" value="Luo arvostelu" />
 </form>
 {% endblock %}
